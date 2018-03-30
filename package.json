@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "npm run webpack",
     "webpack": "./node_modules/webpack/bin/webpack.js",
-    "start:dev": "npm run webpack -- -w & nodemon server"
+    "start:dev": "npm run webpack -- -w & nodemon server",
+    "start": "node server"
   },
   "author": "",
   "license": "ISC",
