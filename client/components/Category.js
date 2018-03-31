@@ -8,15 +8,16 @@ const Category = ({ category, products, createProduct, deleteCategory }) => {
     <div>
       <h1>Category: {category.name}</h1>
       <h3> Products: </h3>
-      <ul>
+      <ul className='list-group'>
         {
           products.map(product => {
-            return <li key={product.id}> {product.name} </li>
+            return <li className='list-group-item' key={product.id}> {product.name} </li>
           })
         }
       </ul>
-      <button onClick={() => createProduct(category)}> Add a Product </button> &nbsp;
-      <button onClick={() => deleteCategory(category)}> Delete this Category </button>
+      <br />
+      <button className='btn btn-outline-dark' onClick={() => createProduct(category)}> Add a Product </button> &nbsp;
+      <button className='btn btn-outline-danger' onClick={() => deleteCategory(category)}> Delete this Category </button>
     </div>
   )
 };

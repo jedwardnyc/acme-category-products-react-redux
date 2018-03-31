@@ -6,7 +6,6 @@ import Nav from './Nav';
 import Home from './Home';
 import Products from './Products';
 import Product from './Product';
-import Categories from './Categories';
 import Category from './Category';
 
 class App extends Component {
@@ -22,12 +21,11 @@ class App extends Component {
         <Router>
           <div>
             <Nav />
-            <div>
+            <div className='container-fluid'>
               <Switch>
                 <Route path='/' exact component={ Home } />
                 <Route path='/products' exact component={ Products } />
                 <Route path='/products/:id' render={( { match } ) => <Product id={ match.params.id }/> } />
-                <Route path='/categories' exact component={ Categories } />
                 <Route path='/categories/:id' render={( { match, history } ) => <Category id={ match.params.id } history={history}/> } />
               </Switch>
             </div>

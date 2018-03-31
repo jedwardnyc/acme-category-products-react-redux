@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { deleteProduct } from '../store';
 
 const Product = ({ product, categories, deleteProduct }) => {
-  console.log(product)
   return (
-    <div>
+    <div className='list-group-item'>
       <h3> {product.name} </h3>
-      <h4> category: {categories.find(category => category.id === product.categoryId).name} </h4>
-      <button onClick={() => deleteProduct(product)} > Delete </button>
+      <h4> Category: {categories.find(category => category.id === product.categoryId).name} </h4>
+      <button className='btn btn-sm btn-danger' onClick={() => deleteProduct(product)} > Delete </button>
     </div>
   )
 };

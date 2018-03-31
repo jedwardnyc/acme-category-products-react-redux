@@ -5,6 +5,7 @@ const db = require('./db');
 const { Category, Product } = db.models; 
 
 app.use('/dist', express.static('dist'));
+app.use('/vendor', express.static('node_modules'));
 app.use(require('body-parser').json());
 
 app.get('/', (req,res,next) => {
@@ -24,7 +25,6 @@ app.get('/api/categories', (req,res,next) => {
 });
 
 app.post('/api/products', (req,res,next) => {
-  console.log(req.body)
   Product.create(req.body)
     .then(product => res.send(product))
     .catch(next)

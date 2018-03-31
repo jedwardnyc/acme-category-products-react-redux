@@ -22,7 +22,7 @@ const syncAndSeed = () => {
     })
 };
 
-Product.belongsTo(Category, { onDelete: 'cascade', hooks: true });
+Product.belongsTo(Category, { onDelete: 'cascade' });
 Category.belongsToMany(Product, {through: 'categoryId'});
 Category.hasMany(Product);
 

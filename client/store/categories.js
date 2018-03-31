@@ -11,6 +11,7 @@ export const fetchCategories = () => {
     return axios.get('/api/categories')
       .then(res => res.data)
       .then(categories => dispatch({ type: GET_CATEGORIES, categories }))
+      .catch(err => console.log(err.response))
   };
 };
 
